@@ -1,0 +1,54 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'webcam/style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'face/resized_rushui_face.png' %}" >
+  <script defer src="{% static 'face/face-api.js' %}"></script>
+  <script defer src="{% static 'face/face-script.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    body {
+      background-image: url("{% static 'webcam/images/cliff.jpg' %}");
+      background-size: cover;
+    }
+
+    canvas {
+        position: relative;
+        top: -560px;
+        align-items: center;
+        justify-content: center;
+    }
+  </style>
+</head>
+<body>
+    <div id="container">
+        <video autoplay="true" id="videoElement" width="720" height="560"></video>
+    </div>
+    <div id="wrapper">
+        <label class="switch">
+            <input class="switch-input" type="checkbox"/>
+            <span class="switch-label" data-on="On" data-off="Off"></span> 
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div id="div_1">
+
+    </div id="div_1">
+    <button id = 'questionnaire_1'>Q1. How was your day? </button>
+    <button id = 'questionnaire_2'>Q2. What did you like the most?</button>
+    <button id = 'questionnaire_3'>Q3. What did you like the least?</button>
+    <button id = 'questionnaire_4'>Q4. Are there things that are worrying you?</button>
+    <button id = 'questionnaire_5'>Q5. Did something unexpected/surprising happen today?</button>
+    <div>
+      <a id="placebutton" href="http://127.0.0.1:8000/face/maps" class="button">Go places</a>
+  </div>
+ 
+</body>
+</html>
+
